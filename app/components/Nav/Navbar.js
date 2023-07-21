@@ -11,7 +11,7 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [pcClipPath, setPcClipPath] = useState('polygon(48% 0, 100% 0, 100% 71%, 100% 50%, 50% 75%, 0 100%, 0 100%, 0 100%, 0 46%, 0 0)');
-    const mobileClipPath = 'polygon(50% 0%, 100% 0, 100% 35%, 100% 37%, 100% 16%, 100% 39%, 30% 100%, 0 100%, 0% 35%, 0 0)';
+    const mobileClipPath = 'polygon(50% 0%, 100% 0, 100% 35%, 100% 37%, 100% 16%, 100% 50%, 30% 100%, 0 100%, 0% 35%, 0 0)';
   
     const toggleMenu = () => {
       setMenuOpen(!menuOpen);
