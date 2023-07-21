@@ -10,17 +10,18 @@
     border-radius: 8px;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;    z-index: 999; 
-    width: 500px;
-    height: 500px;
+    width: 30%;
+    height: 60%;
     
   }
 
   .popup_container button {
     justify-content: flex-start;
-    height: 22px;
-    background-color: aliceblue;
-    border-radius: 50%;
-  }
+    height: 25px;
+    background-color: white;
+
+   }
+
   .popup_container button #icon{
     justify-content: flex-start;
   }
@@ -33,4 +34,29 @@
   
   .popup_container p {
     text-align: left;
+  }
+
+  @media screen and (max-width: 970px) {
+
+    .popup_container {
+    width: 40%;
+    height: 60%;
+    
+  }
+  }
+  @media screen and (max-width: 767px) {
+
+    .popup_container {
+    width: 65%;
+    height: 60%;
+    
+  }
+  }
+  @media screen and (max-width: 486px) {
+
+    .popup_container {
+    width: 80%;
+    height: 60%;
+    
+  }
   }
