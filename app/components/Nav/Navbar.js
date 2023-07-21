@@ -53,7 +53,7 @@ const Navbar = () => {
           
     }}
   >
-    <div className="container flex flex-row flex-wrap items-center justify-between p-5 mx-auto md:flex-row">
+    <div className="container flex flex-wrap items-center p-5 mx-auto md:flex-row">
 
       <Link href="/" className="flex items-center mb-4 font-medium text-gray-900 title-font md:mb-0">
         <Image alt="logo" src="/assets/main/logo.png" width={133} height={85}/>
@@ -70,7 +70,7 @@ const Navbar = () => {
       </div>
 
       {/* PC Görünüm */}
-      <nav className="flex-row flex-wrap items-center justify-between hidden mr-24 md:flex md:ml-auto">
+      <nav className="flex-row flex-wrap items-center justify-between hidden mr-40 md:flex md:ml-auto">
         <Link href="/" className="mr-5 hover:text-gray-900">  
           <span className={styles.link_wrapper}>{t('Home')}</span>
         </Link>

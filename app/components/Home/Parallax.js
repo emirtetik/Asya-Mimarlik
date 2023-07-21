@@ -18,11 +18,11 @@ const Parallax = () => {
             blurDataURL='{lowResImage}'
             objectFit="cover" 
           />
-       <div className={styles.textImage}>
+       {/* <div className={styles.textImage}>
               <div className={styles.name}>ASYA MİMARLIK VE İNŞAAT</div>
               <div className={styles.desc}>Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</div>
-            </div>
-        </div> 
+            </div>*/}
+        </div>  
       </div>
       <div className={styles.triangel}>
         <div className={styles.section_triangel}></div>
