@@ -10,7 +10,9 @@ const Navbar = () => {
     const { t, i18n } = useTranslation();
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
-
+    const [pcClipPath, setPcClipPath] = useState('polygon(48% 0, 100% 0, 100% 71%, 100% 50%, 50% 75%, 0 100%, 0 100%, 0 100%, 0 46%, 0 0)');
+    const mobileClipPath = 'polygon(50% 0%, 100% 0, 100% 35%, 100% 37%, 100% 16%, 100% 39%, 30% 100%, 0 100%, 0% 35%, 0 0)';
+  
     const toggleMenu = () => {
       setMenuOpen(!menuOpen);
     };
@@ -39,18 +41,27 @@ const Navbar = () => {
         }
       }, []);
 
-      const pcClipPath = 'polygon(48% 0, 100% 0, 100% 71%, 100% 50%, 50% 75%, 0 100%, 0 100%, 0 100%, 0 46%, 0 0)';
-  const mobileClipPath = 'polygon(50% 0%, 81% 0, 100% 0, 100% 0, 100% 46%, 20% 100%, 0 100%, 0% 70%, 0% 35%, 0 0)';
-  
-  const clipPath = typeof window !== 'undefined' && window.innerWidth <= 768 ? mobileClipPath : pcClipPath;
+      const handleResize = () => {
+        const windowWidth = window.innerWidth;
+        const clipPath = windowWidth < 768 ? mobileClipPath : pcClipPath;
+        setPcClipPath(clipPath);
+      };
+    
+      useEffect(() => {
+        handleResize();
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
   return (
     <header
     id='head'
     className={`fixed text-black w-full z-50
     ${scrolled ? 'bg-white transition-colors duration-300 ease-linear ' : 'bg-transparent'}`}
     style={{
-      clipPath: clipPath,
-          
+      clipPath: pcClipPath,
     }}
   >
     <div className="container flex flex-row flex-wrap items-center justify-between p-5 mx-auto md:flex-row">
@@ -100,7 +111,7 @@ const Navbar = () => {
     </div>
 
     {/* Mobil Görünüm */}
-    <nav className={`md:hidden ${menuOpen ? 'block' : 'hidden'}`}>
+    <nav className={`md:hidden   ${menuOpen ? 'block ' : 'hidden'}`}>
       <Link href="/" className="block my-4 hover:text-gray-900">  
         <span className={styles.link_wrapper}>{t('Home')}</span>
       </Link>
