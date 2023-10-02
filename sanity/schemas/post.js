@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
     name: 'post',
     type: 'document',
@@ -20,6 +21,21 @@ export default {
         options: {
           source: 'title',
         },
+      },
+      {
+        name:'images',
+        title: 'Images',
+        type: 'image', 
+        options:{
+          hotspot:true
+        },
+        fields:[
+          {
+            name:'alt',
+            title:'Alt',
+            type:'string'
+          }
+        ]
       },
       {
         name: 'content',

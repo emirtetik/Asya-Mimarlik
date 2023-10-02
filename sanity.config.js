@@ -1,18 +1,19 @@
 import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemas'
+import {schemaTypes} from './sanity/schemas'
 
 export default defineConfig({
   name: 'default',
-  title: 'Blog asya',
+  title: 'AsyaİnşaatMimarlık',
 
-  projectId: '0jq1vwya',
+  projectId: '5p2659w8',
   dataset: 'production',
-
+  basePath: '/admin',
   plugins: [deskTool(), visionTool()],
 
   schema: {
     types: schemaTypes,
   },
 })
+   
