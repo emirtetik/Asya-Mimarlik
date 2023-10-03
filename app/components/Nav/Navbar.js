@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useCallback } from 'react';
 import Link from 'next/link'
 import Image from 'next/legacy/image'
 import styles from '../../styles/navbar.module.css'
@@ -41,11 +41,11 @@ const Navbar = () => {
         }
       }, []);
 
-      const handleResize = () => {
+      const handleResize = useCallback(() => {
         const windowWidth = window.innerWidth;
         const clipPath = windowWidth < 768 ? mobileClipPath : pcClipPath;
         setPcClipPath(clipPath);
-      };
+      }, [mobileClipPath, pcClipPath]);
     
       useEffect(() => {
         handleResize();
@@ -54,7 +54,7 @@ const Navbar = () => {
         return () => {
           window.removeEventListener('resize', handleResize);
         };
-      }, []);
+      }, [handleResize]);
   return (
     <header
     id='head'
